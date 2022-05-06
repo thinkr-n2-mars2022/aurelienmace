@@ -2,11 +2,10 @@ Package: aurelienmace
 Version: 0.0.0.9000
 Title: ThinkR Level 2 Exam
 Description: Use Rmarkdown First method to build your package. Start your package with documentation. Everything can be set from a Rmarkdown file in your project.
-Authors@R: c(person(given = "Sebastien",
-         family = "Rochette",
+Authors@R: c(person(given = "Aurélien",
+         family = "Macé",
          role = c("aut", "cre"),
-         email = "sebastien@thinkr.fr",
-         comment = c(ORCID = "0000-0002-1565-9313")),
+         email = "aurelien.mace@finddx.org"),
   person(given = "ThinkR",
          role = "cph"))
 License: file LICENSE
