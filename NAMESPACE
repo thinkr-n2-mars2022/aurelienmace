@@ -2,5 +2,10 @@
 
 export("%>%")
 export(bmi)
+export(multi_import_excel)
 importFrom(assertthat,assert_that)
 importFrom(magrittr,"%>%")
+importFrom(purrr,map)
+importFrom(purrr,set_names)
+importFrom(readxl,excel_sheets)
+importFrom(readxl,read_excel)
