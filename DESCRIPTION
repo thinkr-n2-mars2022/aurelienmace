@@ -11,7 +11,9 @@ Description: Use Rmarkdown First method to build your package. Start your
 License: file LICENSE
 Imports: 
     assertthat,
-    magrittr
+    magrittr,
+    purrr,
+    readxl
 Suggests: 
     knitr,
     rmarkdown,
