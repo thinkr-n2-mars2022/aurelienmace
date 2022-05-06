@@ -15,9 +15,13 @@
 #' @examples
 #' bmi(mass = 70, height = 1.8)
 bmi <- function(mass, height) {
-  assert_that(mass > 0 & mass < 200)
-  assert_that(height > 0.5 & height < 2.5)
+  if(is.na(mass) | is.na(height)){
+    return(message('NA value'))
+  }else{
+    assert_that(mass > 0 & mass < 200)
+    assert_that(height > 0.5 & height < 2.5)
 
-  bmi_to_return <- mass/height^2
-  return(bmi_to_return)
+    bmi_to_return <- mass/height^2
+    return(bmi_to_return)
+  }
 }

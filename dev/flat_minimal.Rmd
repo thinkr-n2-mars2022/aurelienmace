@@ -31,11 +31,15 @@ library(assertthat)
 #' @export
 #'
 bmi <- function(mass, height) {
-  assert_that(mass > 0 & mass < 200)
-  assert_that(height > 0.5 & height < 2.5)
+  if(is.na(mass) | is.na(height)){
+    return(message('NA value'))
+  }else{
+    assert_that(mass > 0 & mass < 200)
+    assert_that(height > 0.5 & height < 2.5)
 
-  bmi_to_return <- mass/height^2
-  return(bmi_to_return)
+    bmi_to_return <- mass/height^2
+    return(bmi_to_return)
+  }
 }
 ```
 
@@ -48,6 +52,7 @@ test_that("bmi works", {
   expect_equal(bmi(mass = 70, height = 1.8), 70/(1.8^2))
   expect_error(bmi(mass = 3000, height = 1.8))
   expect_error(bmi(mass = 70, height = 180))
+  expect_message(bmi(mass = NA, height = 180), 'NA value')
 })
 ```
 

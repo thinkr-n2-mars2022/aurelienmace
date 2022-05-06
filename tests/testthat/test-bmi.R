@@ -4,4 +4,5 @@ test_that("bmi works", {
   expect_equal(bmi(mass = 70, height = 1.8), 70/(1.8^2))
   expect_error(bmi(mass = 3000, height = 1.8))
   expect_error(bmi(mass = 70, height = 180))
+  expect_message(bmi(mass = NA, height = 180), 'NA value')
 })
