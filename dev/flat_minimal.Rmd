@@ -7,6 +7,8 @@ editor_options:
 
 ```{r development, include=FALSE}
 library(testthat)
+library(assertthat)
+
 ```
 
 <!--
@@ -15,25 +17,37 @@ library(testthat)
 
 # My function
 
-```{r function-my_fun}
-#' my_fun Title
+```{r function-bmi}
+#' bmi 
+#' 
+#' Function calculation the Body Mass Index
 #'
-#' @return 1
+#' @importFrom assertthat assert_that
+#'
+#' @param mass weight value in kg (should be between 0 and 200)
+#' @param height height value in meter (should be between 0. and 2.5)
+#'
+#' @return The Body Mass Index in kg/m2
 #' @export
 #'
-#' @examples
-my_fun <- function() {
-  1
+bmi <- function(mass, height) {
+  assert_that(mass > 0 & mass < 200)
+  assert_that(height > 0.5 & height < 2.5)
+
+  bmi_to_return <- mass/height^2
+  return(bmi_to_return)
 }
 ```
 
-```{r examples-my_fun}
-my_fun()
+```{r examples-bmi}
+bmi(mass = 70, height = 1.8)
 ```
 
-```{r tests-my_fun}
-test_that("my_fun works", {
-
+```{r tests-bmi}
+test_that("bmi works", {
+  expect_equal(bmi(mass = 70, height = 1.8), 70/(1.8^2))
+  expect_error(bmi(mass = 3000, height = 1.8))
+  expect_error(bmi(mass = 70, height = 180))
 })
 ```
 
@@ -41,5 +55,5 @@ test_that("my_fun works", {
 ```{r development-inflate, eval=FALSE}
 # Run but keep eval=FALSE to avoid infinite loop
 # Execute in the console directly
-fusen::inflate(flat_file = "dev/flat_minimal.Rmd", vignette_name = "Minimal")
+fusen::inflate(flat_file = "dev/flat_minimal.Rmd", vignette_name = "BMI")
 ```
