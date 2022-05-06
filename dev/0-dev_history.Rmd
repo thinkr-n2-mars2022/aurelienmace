@@ -22,7 +22,8 @@ fusen::fill_description(
       person("Aurélien", "Macé", email = "aurelien.mace@finddx.org", role = c("aut", "cre")),
       person(given = "ThinkR", role = "cph")
     )
-  )
+  ),
+  overwrite = TRUE
 )
 # Define License with use_*_license()
 usethis::use_proprietary_license("FIND")
