@@ -38,12 +38,16 @@ multi_import_excel <- function(path) {
 }
 ```
 
-```{r multi_import_excel-my_fun}
-
+```{r multi_import_excel-multi_import_excel}
+mypath <- system.file("extdata", "toydatasets.xlsx", package = "aurelienmace")
+multi_import_excel(path = mypath)
 ```
 
-```{r tests-my_fun}
+```{r tests-multi_import_excel}
 test_that("my_fun works", {
+  mypath <- system.file("extdata", "toydatasets.xlsx", package = "aurelienmace")
+  test_res <- multi_import_excel(path = mypath) %>% map(dim)
+  expect_equal(test_res$diamonds, c(50, 10))
 
 })
 ```

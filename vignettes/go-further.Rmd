@@ -22,7 +22,8 @@ library(aurelienmace)
 
 # My function
 
-```{r multi_import_excel-my_fun}
-
+```{r multi_import_excel-multi_import_excel}
+mypath <- system.file("extdata", "toydatasets.xlsx", package = "aurelienmace")
+multi_import_excel(path = mypath)
 ```
 
