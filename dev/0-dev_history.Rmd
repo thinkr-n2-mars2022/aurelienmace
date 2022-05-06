@@ -19,13 +19,13 @@ fusen::fill_description(
     Title = "ThinkR Level 2 Exam",
     Description = "Use Rmarkdown First method to build your package. Start your package with documentation. Everything can be set from a Rmarkdown file in your project.",
     `Authors@R` = c(
-      person("Sebastien", "Rochette", email = "sebastien@thinkr.fr", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1565-9313")),
+      person("Aurélien", "Macé", email = "aurelien.mace@finddx.org", role = c("aut", "cre")),
       person(given = "ThinkR", role = "cph")
     )
   )
 )
 # Define License with use_*_license()
-usethis::use_mit_license("Sébastien Rochette")
+usethis::use_proprietary_license("FIND")
 ```
 
 # Start using git
